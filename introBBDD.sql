@@ -46,3 +46,6 @@ having count(t.ticket_no) >1
 
 
 -- 9. Vuelos con retraso de salida superior a una hora.
+select f.flight_id , (f.actual_departure  - f.scheduled_departure ) as retraso
+from flights f 
+where f.actual_departure - f.scheduled_departure > interval '1 hour'
